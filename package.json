@@ -4,6 +4,16 @@
     "vercel-build": "php -l index.php"
   },
   "devDependencies": {
+    "@types/pg": "^8.23.1",
     "vercel-php": "0.7.3"
+  },
+  "dependencies": {
+    "better-auth": "^1.7.3",
+    "drizzle-orm": "^0.45.2",
+    "lucide-react": "^1.41.0",
+    "next": "^16.3.4",
+    "pg": "^8.23.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   }
 }
