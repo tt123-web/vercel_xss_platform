@@ -1,11 +1,11 @@
 <?php
 define("IN_XSS_PLATFORM", true);
 
-require_once("functions.php");
-require_once("dio.php");
+require_once(__DIR__ . "/functions.php");
+require_once(__DIR__ . "/dio.php");
 
 //CSP开启
-require_once("waf.php");
+require_once(__DIR__ . "/waf.php");
 
 //设置httponly
 ini_set("session.cookie_httponly", 1);

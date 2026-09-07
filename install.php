@@ -417,7 +417,7 @@ function display_setup_form( $error = null ) {
 
 //xss过滤
 function stripStr($str) {
-    if(get_magic_quotes_gpc())
+    if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
         $str=stripslashes($str);
     return htmlspecialchars($str,ENT_QUOTES,'UTF-8');
 }
@@ -500,4 +500,4 @@ function delTempFiles() {
     @delTree('diff/');
     @delTree('guide/');
 }
-?> 
+?>
