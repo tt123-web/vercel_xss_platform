@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createAuthClient } from 'better-auth/react'
 
-const client = createAuthClient()
+const client = createAuthClient({ baseURL: typeof window === 'undefined' ? undefined : window.location.origin })
 
 export function AuthForm() {
   const router = useRouter()
