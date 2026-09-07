@@ -10,8 +10,8 @@ if(count($_GET)==0&&count($_POST)==0&&count($_COOKIE)==0)
 exit();
 */
 header("Access-Control-Allow-Origin:*");
-require_once("functions.php");
-require_once("dio.php");
+require_once(__DIR__ . "/functions.php");
+require_once(__DIR__ . "/dio.php");
 
 $info = array();
 
@@ -60,6 +60,6 @@ save_xss_record(json_encode($info), $request_time);
 
 //发送邮件通知
 if (MAIL_ENABLE) {
-    require_once("mail.php");
+    require_once(__DIR__ . "/mail.php");
     @send_mail($info);
 }

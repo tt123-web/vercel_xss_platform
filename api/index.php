@@ -5,6 +5,9 @@ if (!defined('IN_XSS_PLATFORM')) {
     define('IN_XSS_PLATFORM', true);
 }
 
+$appRoot = dirname(__DIR__);
+chdir($appRoot);
+
 $route = isset($_GET['route']) ? trim((string) $_GET['route'], '/') : 'index.php';
 $route = rawurldecode($route);
 
