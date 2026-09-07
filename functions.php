@@ -94,10 +94,10 @@ function isBase64Formatted($str) {
 function encrypt($info) {
     if (ENCRYPT_ENABLE) {
         if (ENCRYPT_TYPE === "AES") {
-            require_once("aes.php");
+            require_once(__DIR__ . "/aes.php");
             $info = AESEncryptCtr($info, ENCRYPT_PASS);
         } else {
-            require_once("rc4.php");
+            require_once(__DIR__ . "/rc4.php");
             $info = base64_encode(rc4($info, ENCRYPT_PASS));
         }
     } else
@@ -109,11 +109,11 @@ function encrypt($info) {
 function decrypt($info) {
     if (ENCRYPT_ENABLE) {
         if (ENCRYPT_TYPE === "AES") {
-            require_once("aes.php");
+            require_once(__DIR__ . "/aes.php");
             $info = AESDecryptCtr($info, ENCRYPT_PASS);
             
         } else {
-            require_once("rc4.php");
+            require_once(__DIR__ . "/rc4.php");
             $info = rc4(base64_decode($info), ENCRYPT_PASS);
         }
     } else
@@ -233,7 +233,7 @@ function convertIP($ip, $ipdatafile) {
                     $AddrSeek = fread($fd, 3);
                     if (strlen($AddrSeek) < 3) {
                         fclose($fd);
-                        return '系统错误';
+                        return '系��错误';
                     }
                     $ipFlag = fread($fd, 1);
                     if ($ipFlag == chr(2)) {

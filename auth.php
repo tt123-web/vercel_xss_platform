@@ -3,7 +3,7 @@ if (!defined('IN_XSS_PLATFORM')) {
     exit('Access Denied');
 }
 
-require_once("functions.php");
+require_once(__DIR__ . "/functions.php");
 
 //设置httponly
 ini_set("session.cookie_httponly", 1);
@@ -31,4 +31,4 @@ if ( ADMIN_IP_CHECK_ENABLE && !(isset($_SESSION['user_IP']) && $_SESSION['user_I
 }
 
 //开启CSP
-require_once("waf.php");
+require_once(__DIR__ . "/waf.php");

@@ -7,6 +7,9 @@ require_once(__DIR__ . "/dio.php");
 //CSP开启
 require_once(__DIR__ . "/waf.php");
 
+// Vercel Serverless 中以统一入口执行时，确保页面相对资源仍从项目根目录解析。
+chdir(__DIR__);
+
 //设置httponly
 ini_set("session.cookie_httponly", 1);
 session_start();

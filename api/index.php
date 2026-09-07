@@ -1,6 +1,9 @@
 <?php
 date_default_timezone_set('Asia/Shanghai');
 error_reporting(0);
+if (!defined('IN_XSS_PLATFORM')) {
+    define('IN_XSS_PLATFORM', true);
+}
 
 $route = isset($_GET['route']) ? trim((string) $_GET['route'], '/') : 'index.php';
 $route = rawurldecode($route);
