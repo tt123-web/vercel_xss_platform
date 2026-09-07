@@ -1,0 +1,6 @@
+.env*
+.git
+.git/**
+node_modules
+PHPMailer/composer.lock
+change_encrypt_pass.php

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "vercel-build": "php -l index.php"
+  },
+  "devDependencies": {
+    "vercel-php": "0.7.3"
+  }
+}
