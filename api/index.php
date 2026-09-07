@@ -8,10 +8,10 @@ if (!defined('IN_XSS_PLATFORM')) {
 $appRoot = dirname(__DIR__);
 chdir($appRoot);
 
-$route = isset($_GET['route']) ? trim((string) $_GET['route'], '/') : '';
+$route = isset($_GET['route']) ? trim((string) $_GET['route'], '/') : 'login.php';
 if ($route === '') {
     $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-    $route = trim($requestPath, '/') ?: 'index.php';
+    $route = trim($requestPath, '/') ?: 'login.php';
 }
 $route = rawurldecode($route);
 
