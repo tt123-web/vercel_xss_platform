@@ -16,7 +16,9 @@ if ($script === '' || $script === 'api') {
     $script = 'index.php';
 }
 
-$target = dirname(__DIR__) . '/' . $script;
+$appRoot = dirname(__DIR__);
+chdir($appRoot);
+$target = $appRoot . '/' . $script;
 if (!preg_match('/^[a-zA-Z0-9_.-]+\\.php$/', $script) || !is_file($target)) {
     http_response_code(404);
     exit('Not Found');
